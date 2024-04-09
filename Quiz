@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <style>
+  .quiz {
+    position: relative;
+    left: 150px;
+    top: 200px;
+    background: #b9b7bd;
+    width: 700px;
+    height: 700px;
+    border-radius: 20px;
+    border-bottom: 2px solid black;
+  }
+  h1 {
+    font-size: 50px;
+    font-weight: 30;
+    display: flex;
+    justify-content: center;
+  }
+ body {
+    background: #e7d2cc;
+  }
+    h2 {
+      display: flex;
+      justify-content: center;
+      font-size: 35px;
+      font-weight: 200;
+      border-bottom: 1px solid black;
+    }
+  .answerButton {
+    width: 100%;
+    font-size: 35px;
+    height: 90px;
+    text-align: top;
+    border-radius: 50px;
+   margin: 40px 0;
+    border: none;
+  }
+  .nextBtn {
+    background: green;
+    border: none;
+    margin: 20px;
+    width: 300px;
+    font-weight: bold;
+    font-size: 30px;
+    border-radius: 60px;
+    height: 80px;
+    text-align: center;
+    position: relative;
+    top: 10px;
+    left: 180px;
+  }
+  </style>
+</head>
+<body>
+  <div class="quiz">
+    <h1>Quizical balls</h1>
+    <h2>Special is the greatest coder</h2>
+    <button class="answerButton" onclick="revealAnswersFunc()" id="correct">True</button>
+    <button class="answerButton" onclick="revealAnswersFunc2()" id="wrong">false</button>
+    <section class="next">
+    <button class="nextBtn" id="disable" onclick="Next">Next</button>
+    </section>
+  </div>
+  <script>
+  function next() {
+   
+  }
+  function disable() {
+    document.getElementById('wrong').disabled=true;
+  }
+  function disableCorrectAnswer() {
+    document.getElementById('correct').disabled=true;
+  }
+  function revealAnswersFunc() {
+    document.getElementById('correct').style.background="green";
+    document.getElementById('correct').style.transition="0.5s";
+    disable()
+  }
+  function revealAnswersFunc2() {
+    document.getElementById('wrong').style.background="red";
+    document.getElementById('wrong').style.transition="0.5s";
+    disableCorrectAnswer();
+  }
+  </script>
+</body>
+</html>
